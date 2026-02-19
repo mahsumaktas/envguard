@@ -1,26 +1,15 @@
-[build-system]
-requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
-
 [project]
 name = "envguard"
-version = "0.0.1"
-description = "Scan source code and GitHub Actions for missing or orphaned env variables and secrets"
-readme = "README.md"
-license = {text = "MIT"}
+version = "0.0.4"
+description = "Scan your codebase for missing or orphaned environment variables"
 requires-python = ">=3.9"
 dependencies = [
-    "typer>=0.12",
-    "rich>=13",
-    "python-dotenv>=1",
-    "pyyaml>=6",
+    "click>=8.0.0",
+    "rich>=13.0.0",
 ]
 
 [project.scripts]
-envguard = "envguard.cli:app"
-
-[project.optional-dependencies]
-dev = ["pytest>=8"]
+envguard = "envguard.cli:main"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
